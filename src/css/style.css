@@ -1,0 +1,1227 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+body{
+    background: linear-gradient(rgba(213,201,185),rgba(213,201,185));
+}
+
+header{
+    position: fixed !important;
+    z-index: 100 !important;
+    background-color: #F2EFEA !important;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    box-shadow: 1px 5px 10px grey;
+}
+
+main{
+    min-height: 100vh;
+}
+
+.logo{
+    width: auto;
+    height: 110%;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+.navbar{
+    height: 10%;
+    width: 100%;
+    background-color: #ffffffb3;
+    position:fixed;
+    z-index: 100;
+}
+
+.navbar ul{
+    float: right;
+    margin-right: 2rem;
+}
+
+.navbar ul li{
+    list-style: none;
+    margin: 0 .5rem;
+    display: inline-block;
+    line-height: 5rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family:'Cambria, Cochin, Georgia, Times, 'Times New Roman', serif';
+    padding: 6px 13px;
+    cursor: pointer;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background: #d5c9b9 !important;
+    border-radius: 10px;
+    transition: .4s;
+    color: black !important;
+}
+
+footer{
+    position: relative;
+    margin-top: 5%;
+    width: 100%;;
+    height: 36vh;
+    background: #F2EFEA;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    transition-duration: .5s;
+}
+
+.footer-content{
+    width: auto;
+}
+
+.footer-content > a{
+    text-align: left;
+}
+
+.footer-content > a > img{
+    position: relative;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+    height: 100%;
+    margin-top: 0;
+    width: 90%;
+    padding: 25% 15%;
+}
+
+.footer-content ul{
+    position: relative;
+    margin-top: 20%;
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer-content > ul > li{
+    text-align: justify;
+    color: white;
+    margin: 2% 5% 2% 5%;
+    width: 90%;
+    font-size: large;
+    text-align: center;
+    transition-duration: .7s;
+}
+
+.footer-content > ul > li > a{
+    transition-duration: .7s;
+    padding: .5rem;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-content > ul > li{
+    margin: 2rem;
+}
+
+.footer-content > p{
+    color: black;
+    margin: 4% 2% 4% 2%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.footer-content ul li a:hover, .footer-content ul li .active{
+    background: rgb(213,201,185)
+}
+
+table{
+    table-layout: fixed;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5%;
+    margin-bottom: 5%;
+    box-shadow: 5px 5px 5px gray;
+    height: fit-content;
+}
+
+.admin-table{
+    width: 90%;
+}
+
+.header-row{
+    height: 2rem !important;
+}
+
+tr{
+    height: 6.5rem;
+}
+
+td{
+    width: 14%;
+    border: 1px solid black;
+    background: #ffffffb3;
+    transition-duration: .5s;
+    padding: 0 1%;
+}
+
+.td-admin{
+    cursor: pointer;
+}
+
+.td-admin:hover{
+    background: #d5c9b9 ;
+}
+
+.td-selected{
+    background: #d5c9b9 ;
+}
+
+.td-other-month{
+    background: #1E1E1E;
+}
+
+td p{
+    background: #eed1d1;
+    border: 1px solid black;
+    margin: 4% 0;
+    color: red;
+    text-align: center;
+}
+
+th{
+    border: 1px solid black;
+    background: #1E1E1E;
+    color: #eed1d1;
+}
+
+.today{
+    background: #d5c9b9;
+}
+
+.calendar-container{
+    position: relative;
+    top: 14vh;
+    height: fit-content;
+    margin-bottom: 15%;
+}
+
+.calendar-btn{
+    position: relative;
+    text-decoration: none;
+    margin: 2% .25%;
+    color: black;
+    background: #F2EFEA;
+    padding: .5% 1%;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition-duration: .5s;
+}
+
+.calendar-btn:hover{
+    background: #eed1d1;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+.socmed-box{
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    height: 40%;
+}
+
+.admin-footer .socmed-box{
+    left: 50% !important;
+}
+
+.socmed-box > a{
+    text-decoration: none;
+    width: 100%;
+    font-size: 60px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.socmed-box > a > span{
+    display: inline-block;
+    color: black;
+    transition-duration: .5s;
+}
+
+.socmed-box > a > span:hover{
+    color: #8e857a;
+    border: 1px solid black;
+    box-shadow: 2px 1px 1px black;
+    border-radius: 10px;
+}
+
+.availability-footer{
+    position: relative;
+    margin-top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.availability-footer > h2{
+    font-size: 30px;
+    margin-bottom: 7%;
+}
+
+.availability-footer > pre{
+    font-size: 18px;
+}
+
+.rights-reserved{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* login page */
+
+.login-form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 55%;
+    box-shadow: 5px 10px 10px grey;
+    background: whitesmoke;
+    border-radius: 20px;
+    padding: 3% 2%;
+}
+
+.login-form > h3{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-form > input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.login-form > button {
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition-duration: .7s;
+}
+.login-form > button:hover {
+    box-shadow: 5px 10px 10px rgba(213,201,185);
+}
+
+/* end login page */
+
+.post-section{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    top: 18vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+}
+
+.post-section > .post-section-btn{
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    transition-duration: .7s;
+    background: transparent;
+}
+
+.post-section > .post-section-btn:hover{
+    background: #8e857a;
+    color: rgba(213,201,185);
+}
+
+.post-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    border-radius: 20px;
+    background: #ffffffb3;
+    box-shadow: 3px 3px 5px 5px grey;
+}
+
+.post-img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 75vh;
+    height: 80%;
+    padding: 3%;
+}
+
+.post-img > img{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    float: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.post{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 7% 7% 7% 1%;
+}
+
+.post-header{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 2px solid black;
+}
+
+.post-title{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.post-date{
+    font-size: 20px;
+    font-weight: 300;
+    color: #3d3832;
+    line-height: 3rem;
+    text-align: right;
+    font-style: italic;
+}
+
+.post-content{
+    margin-top: 5%;
+}
+
+.post-content > p{
+    font-size: 18px;
+}
+
+.services-section{
+    position: relative;
+    top: 18vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 180vh;
+    max-height: 180vh;
+    margin: 5% 0 6% 0;
+}
+
+.services-section > h2{
+    position: relative;
+    font-size: 40px;
+    font-weight: 350;
+    text-align: center;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+.services-section > p{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: underline;
+    font-style: italic;
+    top: 91%;
+    text-shadow: 1px 1px 1px#555;
+}
+
+.service-box-container{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 75%;
+    margin-top: 2%;
+}
+
+.service-box{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    box-shadow: 0 0 5px black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 8fr 1.5fr;
+    height: 92.5%;
+    background: #ffffffb3;
+    border: 1px solid black;
+}
+
+.service-box > img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    height: 80%;
+}
+
+.service-box > div{
+    position: relative;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.service-box > div > .title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 480;
+    line-height: 2rem;
+}
+
+.service-box > div > .price{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 480;
+    line-height: 2rem;
+    text-decoration: underline;
+}
+
+.about-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.about-left {
+    margin-top: 2%; /* Add this line to create space between header and picture */
+}
+
+.about-left img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-left img:hover {
+    transform: scale(1.2);
+}
+
+.about-right {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5%;
+}
+
+.about-right h1 {
+    color: #000;
+    font-size: 28px;
+    margin-bottom: 2%;
+}
+
+.about-right h2 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 3%;
+}
+
+.about-right p {
+    color: #666;
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-right .button {
+    text-decoration: none;
+    width: 140px;
+    border: 2px solid #555;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative; /* Add position relative to create a stacking context */
+}
+
+.about-right .button:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #555;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially set the line width to 0 */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.about-right .button:hover:after {
+    transform: scaleX(1); /* Expand the line width on hover */
+    transform-origin: bottom left;
+}
+
+.about-right .button:hover {
+    background-color: #555;
+    color: #eed1d1;
+}
+
+.about-right .button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* booking section */
+
+.appointments-section{
+    position: relative;
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+}
+
+.appointments-schedule{
+    position: relative;
+    top: 14vh;
+    padding-right: 3%;
+}
+
+.filter-section{
+    display: flex;
+}
+
+.filter-section > a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid black;
+    margin-left: 2%;
+    line-height: 2.25rem;
+    height: 100%;
+    padding: 0 1%;
+    transition-duration: .5s;
+}
+
+.filter-section > a:hover{
+    border-radius: 10px;
+    background: #ffffffb3;
+}
+
+.filter-appointments-form, .filter-appointments-form-admin{
+    background: #ffffffb3;
+    width: 44%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+.filter-appointments-form-admin{
+    width: 67%;
+    background: #1E1E1E;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+}
+
+.filter-appointments-form > label{
+    margin-right: 3%;
+}
+
+.filter-appointments-form-admin > label{
+    margin-right: 1%;
+}
+
+.filter-appointments-form > button, .filter-appointments-form, input, .filter-appointments-form-admin> button, .filter-appointments-form-admin > input{
+    border-radius: 5px;
+    padding: 1%;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+.filter-appointments-form > input, .filter-appointments-form-admin > input{
+    cursor: default !important;
+}
+
+.filter-appointments-form > .clear-filter, .filter-appointments-form-admin > .clear-filter{
+    background: #8e857a;
+    color: white;
+}
+
+.filter-appointments-form > button:hover, .filter-appointments-form-admin > button:hover{
+    background: #eed1d1;
+    color: #000;
+
+}
+
+.appointments-list{
+    position: relative;
+    width: 100%;
+    height: 94vh;
+    overflow: auto;
+}
+
+.appointment-container{
+    background: #ffffffb3;
+    padding: 2%;
+    box-shadow: 2px 2px 5px grey;
+    margin: 2% 2% 2% 0;
+}
+
+.appointment-container > .appointment-who{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border-bottom: 1px solid #555;
+}
+
+.appointment-who > h2{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.appointment-who > P{
+    font-style: italic;
+    color: #555;
+    line-height: 2rem;
+    text-align: right;
+}
+
+.booking-btn{
+    position: fixed;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 700;
+    background: #F2EFEA;
+    cursor: pointer;
+    padding: .75% 1%;
+    border-radius: 50px;
+    width: 10rem;
+    box-shadow: 2px 2px 2px 2px black;
+    transition-duration: .5s;
+}
+
+.booking-btn:hover{
+    background: #eed1d1;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+.booking-form {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    box-shadow: 5px 10px 10px grey;
+    background: whitesmoke;
+    border-radius: 20px;
+    padding: 3% 2%;
+    top: 12vh;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 14%;
+}
+
+.booking-form > h3, .appointments-schedule > h3{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 24px;
+}
+
+.appointments-schedule > h3{
+    text-align: left !important;
+    margin-bottom: 2%;
+}
+
+.booking-form input , .booking-form textarea, .booking-form select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+}
+
+.booking-form > .datetime-input-section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.booking-form > .datetime-input-section > .left{
+    padding-right: 3%;
+}
+
+.booking-form > .datetime-input-section > .right{
+    padding-left: 3%;
+}
+
+.booking-form button {
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition-duration: .7s;
+}
+.booking-form button:hover {
+    box-shadow: 3px 3px 5px rgba(213,201,185);
+}
+
+/* end booking section */
+
+.profile-icon{
+    margin-right: .6rem;
+}
+
+.logout{
+    color: #d5c9b9 !important;
+    border-bottom: 1px solid #d5c9b9;
+}
+
+.post-admin-section{
+    position: relative;
+    top: 16vh;
+    height: 65vh;
+    border: 1px solid black;
+}
+
+/* something only admin has */
+.schedule-button-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #555;
+    margin-top: 1%;
+    padding-top: 1%;
+}
+
+.schedule-button-box > button{
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    transition-duration: .5s;
+    background: transparent;
+}
+
+.schedule-button-box > button:hover{
+    background: #eed1d1;
+}
+
+.schedule-button-box > .edit{
+    border-right: 1px solid #ccc;
+    color: rgb(123, 123, 255);
+}
+
+.schedule-button-box > .delete{
+    border-left: 1px solid #ccc;
+    color: rgb(255, 91, 91);
+}
+
+.admin-element{
+    background: #1E1E1E !important;
+    color: white !important;
+    border-color: #ccc !important;
+}
+
+.admin-element p{
+    color: white;
+}
+
+.admin-clear-filter:hover{
+    background: #d5c9b9 !important;
+}
+
+.set-appointment-btn{
+    background: whitesmoke !important;
+    border: 1px solid #1E1E1E !important;
+    color: black !important;
+    font-weight: 550;
+}
+
+.addpost-btn{
+    position: absolute;
+    top: 87vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    background: #1E1E1E;
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    padding: 0.5% 1%;
+    font-weight: 550;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px 5px whitesmoke;
+    color: whitesmoke;
+    cursor: pointer;
+    height: 4rem;
+    width: 12rem;
+    transition-duration: .5s;
+}
+
+.addpost-btn:hover{
+    background: #d5c9b9;
+    color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+    box-shadow: 2px 2px 5px 5px #1E1E1E;
+}
+
+.availability-setting{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 1%;
+}
+
+.availability-setting ::placeholder{
+    font-size: 18px;
+    font-weight: 700;
+    color: #777;
+}
+.availability-setting h3{
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 1%;
+}
+.availability-setting fieldset{
+    padding: 1%;
+    background-color: white;
+    text-align: left;
+}
+
+.availability-setting div{
+    display: inline-flex;
+    align-items: baseline;
+    color: black;
+    border: none;
+    width: 75%;
+}
+.availability-setting input{
+    font-size: 18px;
+    font-weight: 700;
+    background: none;
+    color: black;
+    border: none;
+    border-bottom: rgb(0, 0, 0) solid 2px;
+    text-decoration: none;
+    padding: 1%;
+    margin: 1%;
+    width: 80%;
+}
+.availability-setting input[type="time"]{
+    color: #1E1E1E;
+    margin: 1% 1.5%;
+    padding: 1% 3% !important;
+}
+
+.availability-setting button{
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: whitesmoke;
+    color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+    border-radius: 40px;
+    padding: .5%;
+    margin: 1%;
+    width: 30%;
+    cursor: pointer;
+}
+
+.cred-setting{
+    position: relative;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.service-btn-box{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+.service-btn-box > button{
+    padding: 1%;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+.edit-service{
+    color: rgb(36, 36, 147);
+    border: 1px solid rgb(36, 36, 147);
+    box-shadow: 2px 2px 3px rgb(36, 36, 147);
+}
+
+.edit-service:hover{
+    background: rgb(36, 36, 147);
+    color: whitesmoke;
+}
+
+.delete-service{
+    color: maroon;
+    border: 1px solid maroon;
+    box-shadow: 2px 2px 3px maroon;
+}
+
+.delete-service:hover{
+    background: maroon;
+    color: whitesmoke;
+}
+
+.logo-admin{
+    width: auto;
+    height: 85%;
+    margin-top: 5px;
+    margin-left: 50px;
+    background: #d5c9b9;
+    border-radius: 100%;
+}
+
+.addservice-btn{
+    position: relative;
+    margin-top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24%;
+    height: 3.5rem;
+    font-size: 24px;
+    border-radius: 40px;
+    background: #1E1E1E;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    box-shadow: 2px 2px 5px 5px #1E1E1E;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+.addservice-btn:hover{
+    box-shadow: 2px 2px 5px 5px whitesmoke;
+}
+
+.background-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 220%;
+    background: #d5c9b9;
+    opacity: .95;
+    cursor: pointer;
+    display: none;
+    z-index: 50;
+}
+
+.popup-form{
+    z-index: 90;
+    width: 50%;
+    display: none;
+}
+
+.add_apt-btn{
+    position: fixed;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 700;
+    background: #1E1E1E;
+    color: white;
+    cursor: pointer;
+    padding: .75% 1%;
+    border-radius: 50px;
+    width: 18rem;
+    box-shadow: 2px 2px 2px 2px #F2EFEA;
+    transition-duration: .5s;
+
+}
+
+.add_apt-btn:hover{
+    background: #eed1d1;
+    box-shadow: 2px 2px 2px 2px gray;
+    color: black;
+}
+
+.edit-apt-form{
+    position: fixed !important;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.edit-apt-form input{
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.edit-apt-form > h3{
+    margin-bottom: 1rem !important;
+}
+
+.edit-apt-form > button{
+    margin: 4px 0 !important;
+}
+
+.delete-apt-form, .delete-post-form{
+    position: fixed !important;
+    width: 40% !important;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 1%;
+}
+
+.delete-apt-form button, .delete-post-form button{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.delete-post-form{
+    width: 30% !important;
+    top: 8%;
+    padding: 1%;
+    box-shadow: 3px 3px 4px 4px maroon;
+    border: 1px solid whitesmoke;
+}
+
+.addpost-form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+
+.close-btn{
+    position: absolute;
+    left: 90%;
+    top: 3%;
+    width: 3rem !important;
+    height: 3rem;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.post-btn{
+    background: whitesmoke !important;
+    color: black !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input:disabled, select:disabled{
+    background: #ccc !important;
+    cursor: no-drop !important;
+}
+
+.delete-info{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.del-post{
+    position: absolute;
+    left: 95.5%;
+    bottom: 87.5%;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 30px;
+    background: #d5c9b9;
+    border: 1px solid maroon;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.del-post span{
+    color: maroon;
+    cursor: pointer;
+}
+
+.delete-post-form{
+    position: fixed;
+}
